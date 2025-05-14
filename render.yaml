@@ -1,0 +1,12 @@
+services:
+  - type: static
+    name: frontend
+    env: static
+    plan: free
+    buildCommand: |
+      npm install
+      npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://rag-chatbot-backend-4bls.onrender.com
